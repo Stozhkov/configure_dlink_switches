@@ -84,7 +84,7 @@ try:
 
     if switch.check_ping_default_ip():
         switch.connect(ip='default')
-        # switch.upgrade_firmware()
+        switch.upgrade_firmware()
         switch.reboot()
         switch.hard_disconnect()
         switch.wait_after_reboot(switch.default_ip)
@@ -115,7 +115,7 @@ try:
         switch.configure_account()
         switch.configure_users_vlan()
         switch.delete_default_vlan()
-        # switch.save()
+        switch.save()
         switch.disconnect()
     else:
         print('Currently not available switch with ip', switch.custom_ip_address)
