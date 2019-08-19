@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from des3200reva18 import DES3200RevA18
 from des3200revc18 import DES3200RevC18
 from des3200reva26 import DES3200RevA26

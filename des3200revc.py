@@ -166,6 +166,7 @@ class DES3200RevC(DlinkSwitch):
         """
 
         print('Configure SNMP')
+        self.make_instruction('enable snmp')
         self.make_instruction('delete snmp community public')
         self.make_instruction('delete snmp community private')
         self.make_instruction('delete snmp user initial')
