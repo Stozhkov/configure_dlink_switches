@@ -1,7 +1,6 @@
 from termcolor import colored
 from abc import ABC
 import re
-import socket
 
 
 class Terminal(ABC):

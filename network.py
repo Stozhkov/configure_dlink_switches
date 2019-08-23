@@ -104,17 +104,16 @@ class NetworkBase:
         :return: Read only SNMP community name
         """
 
-        # sql = 'SELECT `value` FROM `default_values` WHERE `name` = \'default.snmp.read\''
-        #
-        # try:
-        #     self.cursor.execute(sql)
-        #     ro_snmp_community = self.cursor.fetchone()[0]
-        # except Exception as e:
-        #     print(str(e))
-        #     exit(0)
-        # else:
-        #     return ro_snmp_community
-        return 'onlyreadcommunity'
+        sql = 'SELECT `value` FROM `default_values` WHERE `name` = \'default.snmp.read\''
+
+        try:
+            self.cursor.execute(sql)
+            ro_snmp_community = self.cursor.fetchone()[0]
+        except Exception as e:
+            print(str(e))
+            exit(0)
+        else:
+            return ro_snmp_community
 
     def get_rw_snmp_community(self):
 
@@ -124,14 +123,13 @@ class NetworkBase:
         :return: Read and write SNMP community name
         """
 
-        # sql = 'SELECT `value` FROM `default_values` WHERE `name` = \'default.snmp.write\''
-        #
-        # try:
-        #     self.cursor.execute(sql)
-        #     rw_snmp_community = self.cursor.fetchone()[0]
-        # except Exception as e:
-        #     print(str(e))
-        #     exit(0)
-        # else:
-        #     return rw_snmp_community
-        return 'readandwritecommunity'
+        sql = 'SELECT `value` FROM `default_values` WHERE `name` = \'default.snmp.write\''
+
+        try:
+            self.cursor.execute(sql)
+            rw_snmp_community = self.cursor.fetchone()[0]
+        except Exception as e:
+            print(str(e))
+            exit(0)
+        else:
+            return rw_snmp_community
