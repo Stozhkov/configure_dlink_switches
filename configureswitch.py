@@ -7,6 +7,7 @@ from des3200revc26 import DES3200RevC26
 from des3200reva28 import DES3200RevA28
 from des3200revc28 import DES3200RevC28
 from des3200revc52 import DES3200RevC52
+from dgs110010me import DGS110010me
 from network import NetworkBase
 from terminal import Terminal
 from time import sleep
@@ -54,6 +55,7 @@ try:
     print('5. DES-3200-26 rev. C')
     print('6. DES-3200-28 rev. C')
     print('7. DES-3200-52 rev. C')
+    print('8. DGS-1100-10ME')
 
     choice = 0
 
@@ -77,6 +79,8 @@ try:
         switch = DES3200RevC28(ip_address, mgm_vlan, user_vlan, username, password, ro_snmp_community, rw_snmp_community)
     elif choice == 7:
         switch = DES3200RevC52(ip_address, mgm_vlan, user_vlan, username, password, ro_snmp_community, rw_snmp_community)
+    elif choice == 8:
+        switch = DGS110010me(ip_address, mgm_vlan, user_vlan, username, password, ro_snmp_community, rw_snmp_community)
     else:
         exit(0)
 
