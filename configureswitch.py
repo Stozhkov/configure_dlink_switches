@@ -93,6 +93,7 @@ try:
         switch.upgrade_firmware()
         switch.reboot()
         switch.hard_disconnect()
+        sleep(5)
         switch.wait_after_reboot(switch.default_ip)
 
         switch.connect(ip='default')

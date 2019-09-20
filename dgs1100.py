@@ -254,7 +254,7 @@ class DGS1100(DlinkSwitch):
         """
 
         print('Reboot switch')
-        self.make_instruction('reboot force_agree', not_wait=True)
+        self.make_instruction('reboot\n\ry', not_wait=True)
 
     def save(self):
 
