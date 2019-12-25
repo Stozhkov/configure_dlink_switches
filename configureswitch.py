@@ -8,6 +8,7 @@ from des3200reva28 import DES3200RevA28
 from des3200revc28 import DES3200RevC28
 from des3200revc52 import DES3200RevC52
 from dgs110010me import DGS110010me
+from dgs121020fl1a import DGS121020fl1a
 from network import NetworkBase
 from terminal import Terminal
 from time import sleep
@@ -56,13 +57,14 @@ try:
     print('6. DES-3200-28 rev. C')
     print('7. DES-3200-52 rev. C')
     print('8. DGS-1100-10ME')
+    print('9. DGS-1100-20/FL1A')
 
     choice = 0
 
     try:
         choice = int(input('Your choice: '))
     except ValueError:
-        print('Choices not available madel of switch')
+        print('Choices not available model of switch')
         exit(0)
 
     if choice == 1:
@@ -81,6 +83,8 @@ try:
         switch = DES3200RevC52(ip_address, mgm_vlan, user_vlan, username, password, ro_snmp_community, rw_snmp_community)
     elif choice == 8:
         switch = DGS110010me(ip_address, mgm_vlan, user_vlan, username, password, ro_snmp_community, rw_snmp_community)
+    elif choice == 9:
+        switch = DGS121020fl1a(ip_address, mgm_vlan, user_vlan, username, password, ro_snmp_community, rw_snmp_community)
     else:
         exit(0)
 

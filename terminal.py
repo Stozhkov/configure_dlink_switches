@@ -16,9 +16,9 @@ class Terminal(ABC):
         :return: Nothing
         """
 
-        if result == 'Success':
+        if result == 'Success' or result == 'Success.':
             colour = 'green'
-        elif result == 'Fault':
+        elif result == 'Fault' or result == 'Failure.':
             colour = 'red'
         else:
             colour = 'yellow'
