@@ -3,21 +3,8 @@ from des3200reva import DES3200RevA
 
 class DES3200RevA28(DES3200RevA):
 
-    def __init__(self,
-                 custom_ip_address,
-                 mgm_vlan,
-                 user_vlan,
-                 user,
-                 password,
-                 ro_snmp_community,
-                 rw_snmp_community):
-        super().__init__(custom_ip_address,
-                         mgm_vlan,
-                         user_vlan,
-                         user,
-                         password,
-                         ro_snmp_community,
-                         rw_snmp_community)
+    def __init__(self, parameters):
+        super().__init__(parameters)
 
     input_wait_string = b'DES-3200-28:5#'
 

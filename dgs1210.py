@@ -9,21 +9,14 @@ import os
 
 class DGS1210(DlinkSwitch):
 
-    def __init__(self,
-                 custom_ip_address,
-                 mgm_vlan,
-                 user_vlan,
-                 user,
-                 password,
-                 ro_snmp_community,
-                 rw_snmp_community):
-        super().__init__(custom_ip_address, str(mgm_vlan))
-        self.mgm_vlan = str(mgm_vlan)
-        self.user_vlan = str(user_vlan)
-        self.user_name = user
-        self.password = password
-        self.ro_snmp_community = ro_snmp_community
-        self.rw_snmp_community = rw_snmp_community
+    def __init__(self, parameters):
+        super().__init__(parameters['custom_ip_address'], str(parameters['mgm_vlan']))
+        self.mgm_vlan = str(parameters['mgm_vlan'])
+        self.user_vlan = str(parameters['user_vlan'])
+        self.user_name = parameters['user']
+        self.password = parameters['password']
+        self.ro_snmp_community = parameters['ro_snmp_community']
+        self.rw_snmp_community = parameters['rw_snmp_community']
 
         try:
             config = ConfigParser()

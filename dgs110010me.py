@@ -3,21 +3,8 @@ from dgs1100 import DGS1100
 
 class DGS110010me(DGS1100):
 
-    def __init__(self,
-                 custom_ip_address,
-                 mgm_vlan,
-                 user_vlan,
-                 user,
-                 password,
-                 ro_snmp_community,
-                 rw_snmp_community):
-        super().__init__(custom_ip_address,
-                         mgm_vlan,
-                         user_vlan,
-                         user,
-                         password,
-                         ro_snmp_community,
-                         rw_snmp_community)
+    def __init__(self, parameters):
+        super().__init__(parameters)
 
     input_wait_string = b'DGS-1100-10/ME:5#'
 

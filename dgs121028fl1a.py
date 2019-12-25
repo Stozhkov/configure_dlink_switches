@@ -3,21 +3,8 @@ from dgs1210 import DGS1210
 
 class DGS121028fl1a(DGS1210):
 
-    def __init__(self,
-                 custom_ip_address,
-                 mgm_vlan,
-                 user_vlan,
-                 user,
-                 password,
-                 ro_snmp_community,
-                 rw_snmp_community):
-        super().__init__(custom_ip_address,
-                         mgm_vlan,
-                         user_vlan,
-                         user,
-                         password,
-                         ro_snmp_community,
-                         rw_snmp_community)
+    def __init__(self, parameters):
+        super().__init__(parameters)
 
     input_wait_string = b'DGS-1210-28:5#'
 

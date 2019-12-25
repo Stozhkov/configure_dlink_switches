@@ -62,6 +62,7 @@ try:
     print('10. DGS-1100-28/FL1A')
 
     choice = 0
+    switch = None
 
     try:
         choice = int(input('Your choice: '))
@@ -69,26 +70,36 @@ try:
         print('Choices not available model of switch')
         exit(0)
 
+    parameters = {
+        'custom_ip_address': ip_address,
+        'mgm_vlan': mgm_vlan,
+        'user_vlan': user_vlan,
+        'user': username,
+        'password': password,
+        'ro_snmp_community': ro_snmp_community,
+        'rw_snmp_community': rw_snmp_community
+    }
+
     if choice == 1:
-        switch = DES3200RevA18(ip_address, mgm_vlan, user_vlan, username, password, ro_snmp_community, rw_snmp_community)
+        switch = DES3200RevA18(parameters)
     elif choice == 2:
-        switch = DES3200RevA26(ip_address, mgm_vlan, user_vlan, username, password, ro_snmp_community, rw_snmp_community)
+        switch = DES3200RevA26(parameters)
     elif choice == 3:
-        switch = DES3200RevA28(ip_address, mgm_vlan, user_vlan, username, password, ro_snmp_community, rw_snmp_community)
+        switch = DES3200RevA28(parameters)
     elif choice == 4:
-        switch = DES3200RevC18(ip_address, mgm_vlan, user_vlan, username, password, ro_snmp_community, rw_snmp_community)
+        switch = DES3200RevC18(parameters)
     elif choice == 5:
-        switch = DES3200RevC26(ip_address, mgm_vlan, user_vlan, username, password, ro_snmp_community, rw_snmp_community)
+        switch = DES3200RevC26(parameters)
     elif choice == 6:
-        switch = DES3200RevC28(ip_address, mgm_vlan, user_vlan, username, password, ro_snmp_community, rw_snmp_community)
+        switch = DES3200RevC28(parameters)
     elif choice == 7:
-        switch = DES3200RevC52(ip_address, mgm_vlan, user_vlan, username, password, ro_snmp_community, rw_snmp_community)
+        switch = DES3200RevC52(parameters)
     elif choice == 8:
-        switch = DGS110010me(ip_address, mgm_vlan, user_vlan, username, password, ro_snmp_community, rw_snmp_community)
+        switch = DGS110010me(parameters)
     elif choice == 9:
-        switch = DGS121020fl1a(ip_address, mgm_vlan, user_vlan, username, password, ro_snmp_community, rw_snmp_community)
+        switch = DGS121020fl1a(parameters)
     elif choice == 10:
-        switch = DGS121028fl1a(ip_address, mgm_vlan, user_vlan, username, password, ro_snmp_community, rw_snmp_community)
+        switch = DGS121028fl1a(parameters)
     else:
         exit(0)
 
