@@ -49,7 +49,9 @@ class DGS1210(DlinkSwitch):
         else:
             result = self.conn_t.read_until(self.input_wait_string)
 
-            if int(str(result).find('Success')) != int('-1') or int(str(result).find('Done')) != int('-1'):
+            if int(str(result).find('Success')) != int('-1')\
+                    or int(str(result).find('Done')) != int('-1')\
+                    or int(str(result).find('[OK]')) != int('-1'):
                 Terminal.print_terminal(instruction, 'Success.')
             else:
                 Terminal.print_terminal(instruction, 'Failure!')

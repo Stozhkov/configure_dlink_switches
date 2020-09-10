@@ -10,6 +10,7 @@ from des3200revc52 import DES3200RevC52
 from dgs110010me import DGS110010me
 from dgs121020fl1a import DGS121020fl1a
 from dgs121028fl1a import DGS121028fl1a
+from des121028me import DES121028me
 from network import NetworkBase
 from terminal import Terminal
 from time import sleep
@@ -58,8 +59,9 @@ try:
     print('6. DES-3200-28 rev. C')
     print('7. DES-3200-52 rev. C')
     print('8. DGS-1100-10ME')
-    print('9. DGS-1100-20/FL1A')
-    print('10. DGS-1100-28/FL1A')
+    print('9. DGS-1210-20/FL1A')
+    print('10. DGS-1210-28/FL1A')
+    print('11. DES-1210-28/ME')
 
     choice = 0
     switch = None
@@ -100,6 +102,8 @@ try:
         switch = DGS121020fl1a(parameters)
     elif choice == 10:
         switch = DGS121028fl1a(parameters)
+    elif choice == 11:
+        switch = DES121028me(parameters)
     else:
         exit(0)
 
