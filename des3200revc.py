@@ -82,9 +82,7 @@ class DES3200RevC(DlinkSwitch):
         print('Configure Syslog')
         self.make_instruction('enable syslog')
         self.make_instruction('create syslog host 1 ipaddress 10.0.2.45 udp_port 514 '
-                              'severity critical facility local0 state enable')
-        self.make_instruction('create syslog host 2 ipaddress 10.0.2.46 udp_port 514'
-                              ' severity warning facility local0 state enable')
+                              'severity debug facility local0 state enable')
 
     def configure_ssh(self):
 
